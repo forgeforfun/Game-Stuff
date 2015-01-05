@@ -19,8 +19,16 @@ public class Screen extends JPanel implements Runnable{
     @Override
     public void run()
     {
-        System.out.println("SUCCESS!");
+        while(true)
+        {
+            revalidate();
+        }
     }
 
-
+    @Override
+    protected void paintComponent(Graphics g) {
+        g.clearRect(0, 0, Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
+        g.setColor(Constants.backgroundColor);
+        g.fillRect(0, 0, Main.SCREEN_WIDTH, Main.SCREEN_HEIGHT);
+    }
 }

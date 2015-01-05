@@ -23,8 +23,8 @@ public class Main {
         frame.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-
         Screen screen = new Screen(frame);
+        frame.add(screen);
     }
 
 
