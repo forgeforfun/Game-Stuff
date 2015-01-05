@@ -2,10 +2,9 @@ package Platformer;
 
 import javax.swing.*;
 
-/**
- * Created by Elizabeth on 1/5/15.
- */
-public class Main {
+
+public class Main
+{
     public static final String TITLE = "The Homie Platformer";
 
     public static final int SCREEN_WIDTH = 1280;
@@ -13,7 +12,12 @@ public class Main {
 
     public static void main(String[] args)
     {
-        new Main();
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new Main();
+            }
+        });
+
     }
 
     private Main()
@@ -22,13 +26,9 @@ public class Main {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
         Screen screen = new Screen(frame);
         frame.add(screen);
+        frame.addKeyListener(screen);
+        frame.setVisible(true);
     }
-
-
-
-
-
 }
