@@ -67,6 +67,7 @@ public class Screen extends JPanel implements Runnable, KeyListener{
     @Override
     public void keyTyped(KeyEvent e)
     {
+        
     }
 
     @Override
